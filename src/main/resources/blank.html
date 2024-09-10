@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторы и книги</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .author {
+            cursor: pointer;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .books {
+            display: none;
+            margin-left: 20px;
+            padding: 10px;
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Авторы и их книги</h1>
+
+<script>
+    function toggleBooks(authorId) {
+        const booksList = document.getElementById(authorId);
+        if (booksList.style.display === "none" || booksList.style.display === "") {
+            booksList.style.display = "block";
+        } else {
+            booksList.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
