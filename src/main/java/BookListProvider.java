@@ -27,6 +27,22 @@ public class BookListProvider {
             if (matcher.find()) {
                 String authorName = matcher.group().trim();
                 String title = data.substring(0, matcher.start());
+
+                if (authorName.equals("аун")) {
+                    authorName = "Фредерик Браун";
+                    title = "Вежливость.";
+                } else if (authorName.contains("Конан")) {
+                    authorName = "Артур Конан-Дойл";
+                } else if (authorName.contains("Элиот") && authorName.contains("Джордж")) {
+                    authorName = "Джордж Элиот";
+                } else if (authorName.contains("Лейнстер")) {
+                    authorName = "Мюррей Лейнстер";
+                } else if (authorName.contains("Ивлин")) {
+                    authorName = "Ивлин Во";
+                } else if (authorName.contains("Голсуорси")) {
+                    authorName = "Джон Голсуорси";
+                }
+
                 Author author = authorMap.get(authorName);
 
                 if (author == null) {
