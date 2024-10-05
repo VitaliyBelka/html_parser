@@ -9,25 +9,31 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
+        .authors {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
         .author {
             cursor: pointer;
-            margin: 10px 0;
-            padding: 10px;
+            margin: 2px 5px;
+            padding: 2px;
             background-color: #f0f0f0;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
         .books {
             display: none;
-            margin-left: 20px;
-            padding: 10px;
+            padding: 1px;
             background-color: #e0e0e0;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
 
-<h1>Авторы и их книги</h1>
+<div class="authors">
+
+</div>
 
 <script>
     function toggleBooks(authorId) {
