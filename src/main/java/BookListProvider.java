@@ -11,7 +11,9 @@ import java.util.regex.Pattern;
 
 import static com.codeborne.selenide.Condition.not;
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.open;
 
 public class BookListProvider {
 
@@ -28,6 +30,8 @@ public class BookListProvider {
                 String authorName = matcher.group().trim();
                 String title = data.substring(0, matcher.start());
 
+                // на сайте что-то непонятное вместо кириллицы, в некоторых названиях
+                // без этих ифов один автор будет считаться разными
                 if (authorName.equals("аун")) {
                     authorName = "Фредерик Браун";
                     title = "Вежливость.";
